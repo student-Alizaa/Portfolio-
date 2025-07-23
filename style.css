@@ -21,6 +21,7 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
+
 header {
     background: rgba(10, 25, 47, 0.95);
     backdrop-filter: blur(10px);
@@ -75,7 +76,7 @@ nav a:hover {
 }
 
 nav a.active {
-    color: #57CBFF;
+    color: #64FFDA;
 }
 
 nav a::after {
@@ -93,6 +94,7 @@ nav a:hover::after,
 nav a.active::after {
     width: 100%;
 }
+
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -424,6 +426,7 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
+
 .scroll-top {
     position: fixed;
     bottom: 2rem;
@@ -497,11 +500,12 @@ section {
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     .project-card {
         padding: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .contact-form {
@@ -520,15 +524,25 @@ section {
     .profile-icon {
         font-size: 3rem;
     }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo p {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 480px) {
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .project-card {
         padding: 1rem;
+        margin-bottom: 1rem;
     }
 
     .about h2,
@@ -543,6 +557,14 @@ section {
 
     .contact-form {
         padding: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+
+    .logo p {
+        font-size: 0.7rem;
     }
 }
 

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alizaa - Web Developer Intern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Alizaa Mangi</h1>
+                    <p>Web Developer Intern</p>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        <p>I'm a passionate Web Developer Intern with expertise in Java, C++, JavaScript, and modern web technologies. Currently pursuing my academic journey while building innovative projects and gaining hands-on experience in software development.</p>
+                        <p>I specialize in full-stack development, database management, and quality assurance. My experience spans from creating responsive web applications to developing comprehensive management systems using various programming languages and frameworks.</p>
+                        <p>Always eager to learn new technologies and contribute to meaningful projects that make a difference in the tech industry.</p>
+                        <div class="skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">ASP.NET Core</span>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <div class="profile-icon">👨‍💻</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Tour & Travel Website</h3>
+                        </div>
+                        <p>Designed and developed a responsive web platform to explore tour packages across Pakistan using HTML, CSS, Bootstrap, and Web3 technologies.</p>
+                        <a href="https://github.com/student-Alizaa" class="btn-primary" target="_blank">View Project</a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Advanced Library Management System</h3>
+                        </div>
+                        <p>Implemented a fully functional Library Management System using Java, Data Structures & Algorithms (DSA), and OOP principles with book search and user management features.</p>
+                        <a href="https://github.com/student-Alizaa" class="btn-primary" target="_blank">View Project</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Student Management System</h3>
+                        </div>
+                        <p>Built a complete Student Management System using ASP.NET Core MVC and Microsoft SQL Server with full CRUD operations through RESTful APIs.</p>
+                        <a href="https://github.com/student-Alizaa" class="btn-primary" target="_blank">View Project</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Quiz Application</h3>
+                        </div>
+                        <p>Developed an interactive Quiz Application in Java using Swing GUI and OOP principles with real-time scoring system and countdown timer.</p>
+                        <a href="https://github.com/student-Alizaa" class="btn-primary" target="_blank">View Project</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Hospital Management System</h3>
+                        </div>
+                        <p>Designed a Hospital Management System using MySQL for database operations with complete CRUD functionalities and efficient schema design.</p>
+                        <a href="https://github.com/student-Alizaa" class="btn-primary" target="_blank">View Project</a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Taxi Management App Prototype</h3>
+                        </div>
+                        <p>Created a high-fidelity prototype of a Taxi Booking App using Figma with features like ride booking, real-time tracking, and payment integration.</p>
+                        <a href="https://github.com/student-Alizaa" class="btn-primary" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out!</p>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                            <span class="error-message" id="fullName-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Send Message</button>
+                        
+                        <div class="success-message" id="success-message">
+                            Thank you for contacting me! I'll get back to you soon.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

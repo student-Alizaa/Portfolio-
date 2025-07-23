@@ -4,20 +4,25 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollEffects();
     initAnimations();
 });
+
 function initNavigation() {
     const mobileMenu = document.getElementById('mobile-menu');
     const nav = document.getElementById('nav');
     const navLinks = document.querySelectorAll('.nav-link');
+
+    
     mobileMenu.addEventListener('click', function() {
         nav.classList.toggle('active');
         mobileMenu.classList.toggle('active');
     });
+
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             nav.classList.remove('active');
             mobileMenu.classList.remove('active');
         });
     });
+
     window.addEventListener('scroll', function() {
         highlightActiveSection();
     });
@@ -63,32 +68,54 @@ function highlightActiveSection() {
         }
     });
 }
+
 function initFormValidation() {
     const form = document.getElementById('contact-form');
     const fullNameInput = document.getElementById('fullName');
     const emailInput = document.getElementById('email');
     const messageInput = document.getElementById('message');
     const successMessage = document.getElementById('success-message');
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         clearErrors();
+
         const isFullNameValid = validateFullName();
         const isEmailValid = validateEmail();
         const isMessageValid = validateMessage();
+
         if (isFullNameValid && isEmailValid && isMessageValid) {
             showSuccessMessage();
             form.reset();
         }
     });
+    fullNameInput.addEventListener('input', () => {
+        clearFieldError('fullName');
+        if (fullNameInput.value.trim().length >= 2) {
+            validateFullName();
+        }
+    });
+    
+    emailInput.addEventListener('input', () => {
+        clearFieldError('email');
+        if (emailInput.value.trim().length > 0) {
+            validateEmail();
+        }
+    });
+    
+    messageInput.addEventListener('input', () => {
+        clearFieldError('message');
+        if (messageInput.value.trim().length >= 10) {
+            validateMessage();
+        }
+    });
+
     fullNameInput.addEventListener('blur', validateFullName);
     emailInput.addEventListener('blur', validateEmail);
     messageInput.addEventListener('blur', validateMessage);
-    fullNameInput.addEventListener('input', () => clearFieldError('fullName'));
-    emailInput.addEventListener('input', () => clearFieldError('email'));
-    messageInput.addEventListener('input', () => clearFieldError('message'));
+
     function validateFullName() {
         const fullName = fullNameInput.value.trim();
-        const errorElement = document.getElementById('fullName-error');
         
         if (fullName === '') {
             showError('fullName', 'Full name is required');
@@ -107,7 +134,7 @@ function initFormValidation() {
 
     function validateEmail() {
         const email = emailInput.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
         
         if (email === '') {
             showError('email', 'Email is required');
@@ -169,8 +196,10 @@ function initFormValidation() {
         }, 5000);
     }
 }
+
 function initScrollEffects() {
     const scrollTopButton = document.getElementById('scroll-top');
+
     window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             scrollTopButton.classList.add('show');
@@ -178,6 +207,7 @@ function initScrollEffects() {
             scrollTopButton.classList.remove('show');
         }
     });
+
     scrollTopButton.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -185,13 +215,14 @@ function initScrollEffects() {
         });
     });
 }
+
 function initAnimations() {
-    // Add fade-in class to elements
     const animatedElements = document.querySelectorAll('.about-text, .about-image, .project-card, .contact-content');
     
     animatedElements.forEach(element => {
         element.classList.add('fade-in');
     });
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -204,6 +235,7 @@ function initAnimations() {
             }
         });
     }, observerOptions);
+
     animatedElements.forEach(element => {
         observer.observe(element);
     });
@@ -222,6 +254,7 @@ window.addEventListener('scroll', function() {
         header.style.boxShadow = '0 2px 20px rgba(100, 255, 218, 0.1)';
     }
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const skillTags = document.querySelectorAll('.skill-tag');
     skillTags.forEach((tag, index) => {
@@ -248,12 +281,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 document.addEventListener('DOMContentLoaded', function() {
     const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
     
     formInputs.forEach(input => {
-       
         input.addEventListener('focus', function() {
             this.parentElement.classList.add('focused');
         });
@@ -263,8 +294,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.parentElement.classList.remove('focused');
             }
         });
-        
-       
         if (input.value !== '') {
             input.parentElement.classList.add('focused');
         }
